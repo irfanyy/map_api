@@ -1,0 +1,725 @@
+{
+	"info": {
+		"_postman_id": "32b1602b-ebb8-41aa-b770-91a5d22faa2d",
+		"name": "Map Electronic",
+		"description": "##### This project is the API project produced for a layout in the specified rows and columns.\n\n##### You can create a matrix starting from 0 and increasing towards the center by giving the boundary of the rows and columns.\n\nYou can view all the layouts you have created. - **All Layout (*GET*)***You can add new layout. Just give the number of rows and columns.* ***\\- New Layout (*POST*)**  \nYou can view any layout. - **Show Layout** (***GET***)  \nYou can get the value of the coordinate you want in a layout. (***GET***)  \nYou can delete a layout. **Destroy Layout (*DELETE*)**\n\n\\--\n\nbase_url => 127.0.0.1:8000",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4158585"
+	},
+	"item": [
+		{
+			"name": "Get All Layouts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/layouts",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"layouts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Layouts",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/layouts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"layouts"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 14:49:53 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 14:49:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.13"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"row\": 0,\n            \"column\": 0,\n            \"values\": \"\"\n        },\n        {\n            \"id\": 5,\n            \"row\": 10,\n            \"column\": 10,\n            \"values\": \"[[0,1,2,3,4,5,6,7,8,9],{\\\"9\\\":10,\\\"0\\\":35,\\\"1\\\":36,\\\"2\\\":37,\\\"3\\\":38,\\\"4\\\":39,\\\"5\\\":40,\\\"6\\\":41,\\\"7\\\":42,\\\"8\\\":43},{\\\"9\\\":11,\\\"0\\\":34,\\\"8\\\":44,\\\"1\\\":63,\\\"2\\\":64,\\\"3\\\":65,\\\"4\\\":66,\\\"5\\\":67,\\\"6\\\":68,\\\"7\\\":69},{\\\"9\\\":12,\\\"0\\\":33,\\\"8\\\":45,\\\"1\\\":62,\\\"7\\\":70,\\\"2\\\":83,\\\"3\\\":84,\\\"4\\\":85,\\\"5\\\":86,\\\"6\\\":87},{\\\"9\\\":13,\\\"0\\\":32,\\\"8\\\":46,\\\"1\\\":61,\\\"7\\\":71,\\\"2\\\":82,\\\"6\\\":88,\\\"3\\\":95,\\\"4\\\":96,\\\"5\\\":97},{\\\"9\\\":14,\\\"0\\\":31,\\\"8\\\":47,\\\"1\\\":60,\\\"7\\\":72,\\\"2\\\":81,\\\"6\\\":89,\\\"3\\\":94,\\\"5\\\":98,\\\"4\\\":99},{\\\"9\\\":15,\\\"0\\\":30,\\\"8\\\":48,\\\"1\\\":59,\\\"7\\\":73,\\\"2\\\":80,\\\"6\\\":90,\\\"5\\\":91,\\\"4\\\":92,\\\"3\\\":93},{\\\"9\\\":16,\\\"0\\\":29,\\\"8\\\":49,\\\"1\\\":58,\\\"7\\\":74,\\\"6\\\":75,\\\"5\\\":76,\\\"4\\\":77,\\\"3\\\":78,\\\"2\\\":79},{\\\"9\\\":17,\\\"0\\\":28,\\\"8\\\":50,\\\"7\\\":51,\\\"6\\\":52,\\\"5\\\":53,\\\"4\\\":54,\\\"3\\\":55,\\\"2\\\":56,\\\"1\\\":57},{\\\"9\\\":18,\\\"8\\\":19,\\\"7\\\":20,\\\"6\\\":21,\\\"5\\\":22,\\\"4\\\":23,\\\"3\\\":24,\\\"2\\\":25,\\\"1\\\":26,\\\"0\\\":27}]\"\n        }\n    ],\n    \"message\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "New Layout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/layouts?row=8&column=10",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"layouts"
+					],
+					"query": [
+						{
+							"key": "row",
+							"value": "8",
+							"description": "Required - integer"
+						},
+						{
+							"key": "column",
+							"value": "10",
+							"description": "Required - integer"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error: same data",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/api/layouts?row=8&column=10",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"layouts"
+							],
+							"query": [
+								{
+									"key": "row",
+									"value": "8",
+									"description": "Required - integer"
+								},
+								{
+									"key": "column",
+									"value": "10",
+									"description": "Required - integer"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 14:45:39 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 14:45:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.13"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": \"has already same data\",\n    \"message\": \"error\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Show Layout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/layouts/:id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"layouts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Show Layout",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/layouts/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"layouts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 14:50:52 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 14:50:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.13"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"row\": 10,\n        \"column\": 10,\n        \"values\": \"[[0,1,2,3,4,5,6,7,8,9],{\\\"9\\\":10,\\\"0\\\":35,\\\"1\\\":36,\\\"2\\\":37,\\\"3\\\":38,\\\"4\\\":39,\\\"5\\\":40,\\\"6\\\":41,\\\"7\\\":42,\\\"8\\\":43},{\\\"9\\\":11,\\\"0\\\":34,\\\"8\\\":44,\\\"1\\\":63,\\\"2\\\":64,\\\"3\\\":65,\\\"4\\\":66,\\\"5\\\":67,\\\"6\\\":68,\\\"7\\\":69},{\\\"9\\\":12,\\\"0\\\":33,\\\"8\\\":45,\\\"1\\\":62,\\\"7\\\":70,\\\"2\\\":83,\\\"3\\\":84,\\\"4\\\":85,\\\"5\\\":86,\\\"6\\\":87},{\\\"9\\\":13,\\\"0\\\":32,\\\"8\\\":46,\\\"1\\\":61,\\\"7\\\":71,\\\"2\\\":82,\\\"6\\\":88,\\\"3\\\":95,\\\"4\\\":96,\\\"5\\\":97},{\\\"9\\\":14,\\\"0\\\":31,\\\"8\\\":47,\\\"1\\\":60,\\\"7\\\":72,\\\"2\\\":81,\\\"6\\\":89,\\\"3\\\":94,\\\"5\\\":98,\\\"4\\\":99},{\\\"9\\\":15,\\\"0\\\":30,\\\"8\\\":48,\\\"1\\\":59,\\\"7\\\":73,\\\"2\\\":80,\\\"6\\\":90,\\\"5\\\":91,\\\"4\\\":92,\\\"3\\\":93},{\\\"9\\\":16,\\\"0\\\":29,\\\"8\\\":49,\\\"1\\\":58,\\\"7\\\":74,\\\"6\\\":75,\\\"5\\\":76,\\\"4\\\":77,\\\"3\\\":78,\\\"2\\\":79},{\\\"9\\\":17,\\\"0\\\":28,\\\"8\\\":50,\\\"7\\\":51,\\\"6\\\":52,\\\"5\\\":53,\\\"4\\\":54,\\\"3\\\":55,\\\"2\\\":56,\\\"1\\\":57},{\\\"9\\\":18,\\\"8\\\":19,\\\"7\\\":20,\\\"6\\\":21,\\\"5\\\":22,\\\"4\\\":23,\\\"3\\\":24,\\\"2\\\":25,\\\"1\\\":26,\\\"0\\\":27}]\"\n    },\n    \"message\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Layout",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/api/layouts/:id",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"layouts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Layout",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/api/layouts/:id",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"layouts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 14:52:58 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 14:52:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.13"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": \"disabled this method\",\n    \"message\": \"error\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Destroy Layout",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/layouts/:id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"layouts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Destroy Layout",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/layouts/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"layouts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 14:53:44 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 14:53:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.13"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": \"Successfuly deleted your record.\",\n    \"message\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Value From Coordinates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/get-value/:id?row=2&column=3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"get-value",
+						":id"
+					],
+					"query": [
+						{
+							"key": "row",
+							"value": "2",
+							"description": "Required - integer"
+						},
+						{
+							"key": "column",
+							"value": "3",
+							"description": "Required - integer"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "17"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Value From Coordinates",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/get-value/:id?row=2&column=3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"get-value",
+								":id"
+							],
+							"query": [
+								{
+									"key": "row",
+									"value": "2",
+									"description": "Required - integer"
+								},
+								{
+									"key": "column",
+									"value": "3",
+									"description": "Required - integer"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "17"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 15:44:40 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 15:44:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.13"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": 57,\n    \"message\": \"success\"\n}"
+				},
+				{
+					"name": "Error example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/get-value/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"get-value",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"status": "Unprocessable Content",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 14:58:22 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 14:58:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.13"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"row\": [\n        \"The row field is required.\"\n    ],\n    \"column\": [\n        \"The column field is required.\"\n    ]\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {",
+					"    console.log(response.json());",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}
