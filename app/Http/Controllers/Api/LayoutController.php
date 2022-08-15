@@ -38,7 +38,7 @@ class LayoutController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(LayoutRequest $request) {
-        //try {
+        try {
 
             // We check same row and column
             if(Layout::where(['column' => (integer)$request->column, 'row' => (integer)$request->row])->first())
@@ -102,13 +102,6 @@ class LayoutController extends Controller {
 
             } while($firstRow <= $row && $firstColumn <= $column);
 
-            /*for($i = 0; $i < count($spiral); $i++) {
-                for($j = 0; $j < count($spiral[0]); $j++) {
-                    echo ($spiral[$i][$j]." | ");
-                }
-                echo ("<br>");
-            }*/
-
             // Write to db
             $layout = new Layout();
             $layout->row = $request->row;
@@ -117,9 +110,9 @@ class LayoutController extends Controller {
             $layout->save();
 
             return response()->json(['data' => (new LayoutResource($layout)), 'message' => 'success'], 201);
-        /*} catch (\Exception $e) {
+        } catch (\Exception $e) {
             return response()->json(['data' => $e->getMessage(), 'message' => 'error'], 400);
-        }*/
+        }
     }
 
     /**
@@ -139,17 +132,18 @@ class LayoutController extends Controller {
     }
 
     /**
-     * 
-     * 
+     * Update is disabled
+     * @return Response
      */
     public function update(Request $request, $id) {
         return response()->json(['data' => 'disabled this method', 'message' => 'error'], 400);
     }
 
     /**
+     * Get Specific value with coordinates
      * 
-     * 
-     * 
+     * @param Layout id
+     * @return Response
      */
     public function getValue(LayoutRequest $request, $id) {
         try {
